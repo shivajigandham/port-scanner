@@ -9,6 +9,7 @@
 #include <iomanip>
 #include <atomic>
 #include <chrono>
+#include <algorithm>
 
 #pragma comment(lib, "ws2_32.lib")
 

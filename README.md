@@ -33,3 +33,17 @@ cl /EHsc port_scanner.cpp /link ws2_32.lib
 3. Enter the start and end port numbers (e.g., `1` to `1000`).
 4. Enter the number of threads (e.g., `100` for fast scanning).
 5. Watch the progress bar and wait for results!
+
+### Example Output
+```text
+Scanning 127.0.0.1...
+[==================================================] 100% 
+
+Scan Results for 127.0.0.1:
+PORT      SERVICE        BANNER
+--------------------------------------------------------
+135       RPC            No banner
+445       Microsoft-DS   No banner
+
+Scan completed in 11.20 seconds.
+```

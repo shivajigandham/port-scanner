@@ -7,10 +7,10 @@ set MINGW_PATH=D:\mingw64\bin\g++.exe
 
 :: Check if our new compiler exists
 if exist "%MINGW_PATH%" (
-    echo [OK] Found MinGW64 at D:\mingw64. Compiling...
-    "%MINGW_PATH%" port_scanner.cpp -o port_scanner.exe -lws2_32 -std=c++11
+    echo [OK] Found MinGW64 at D:\mingw64. Compiling Standalone Binary...
+    "%MINGW_PATH%" port_scanner.cpp -o port_scanner.exe -lws2_32 -std=c++11 -static -static-libgcc -static-libstdc++
     if %ERRORLEVEL% equ 0 (
-        echo [SUCCESS] port_scanner.exe created!
+        echo [SUCCESS] port_scanner.exe created (Standalone)!
     ) else (
         echo [ERROR] Compilation failed.
     )
@@ -21,10 +21,10 @@ if exist "%MINGW_PATH%" (
 :: Fallback check for g++ in PATH
 where g++ >nul 2>nul
 if %ERRORLEVEL% equ 0 (
-    echo [OK] Found g++ in PATH. Compiling...
-    g++ port_scanner.cpp -o port_scanner.exe -lws2_32 -std=c++11
+    echo [OK] Found g++ in PATH. Compiling Standalone Binary...
+    g++ port_scanner.cpp -o port_scanner.exe -lws2_32 -std=c++11 -static -static-libgcc -static-libstdc++
     if %ERRORLEVEL% equ 0 (
-        echo [SUCCESS] port_scanner.exe created!
+        echo [SUCCESS] port_scanner.exe created (Standalone)!
     ) else (
         echo [ERROR] Compilation failed.
     )
